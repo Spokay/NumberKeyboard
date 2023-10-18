@@ -13,6 +13,19 @@ class BodyComponent extends StatefulWidget {
 }
 
 class _BodyComponentState extends State<BodyComponent> {
+  List<String> images = [
+    "https://picsum.photos/id/0/200/200",
+    "https://picsum.photos/id/10/200/200",
+    "https://picsum.photos/id/20/200/200",
+    "https://picsum.photos/id/30/200/200",
+    "https://picsum.photos/id/40/200/200",
+    "https://picsum.photos/id/50/200/200",
+    "https://picsum.photos/id/60/200/200",
+    "https://picsum.photos/id/70/200/200",
+    "https://picsum.photos/id/80/200/200",
+    "https://picsum.photos/id/90/200/200",
+  ];
+  
   int currentImage = 0;
 
   int selectedImage = 0;
@@ -141,15 +154,7 @@ class _BodyComponentState extends State<BodyComponent> {
               ]
             ) : Row(
               children: [
-                Expanded(child: SizedBox(
-                  width: 100, height: 100,
-                  child: Center(
-                    child: Text(
-                      currentImage.toString(),
-                      style: const TextStyle(fontSize: 80),
-                    ),
-                  ),
-                ),)
+                Expanded(child: Image.network(images[currentImage], fit: BoxFit.fill,),)
               ],
             ),
           ),
